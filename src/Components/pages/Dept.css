@@ -1,0 +1,108 @@
+.dept-content {
+    text-align: center;
+    padding: 2rem;
+    background-color: #d8e9dc;
+    background-image: url("https://i.postimg.cc/Gtp1VZ0k/depertment.webp");
+    background-size: cover;       /* 👈 Ensures the image fills the area */
+    background-position: center;  /* 👈 Centers the image */
+    background-repeat: no-repeat; /* 👈 Prevents tiling */
+    color: rgb(0, 0, 0);
+  }
+  
+  .dept-content h1 {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: titleFadeDown 1s ease forwards;
+    animation-delay: 0.2s;
+    font-weight: 800;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes titleFadeDown {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .dept-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive */
+    justify-items: center;
+    gap: 9rem;
+    margin-top: 3rem;
+    padding: 0 rem;
+  }
+  
+
+  
+  .dept-buttons button {
+    padding: 20px 40px;
+    font-size: 18px;
+    background-color: #7ec58d;
+    color: white;
+    border: none;
+    border-radius: 180px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    width: 200px;
+    height: 100px;
+  }
+  
+  .dept-buttons button:hover {
+    background-color: #28a745;
+    transform: scale(1.03);
+  }
+  
+  .dept-buttons button:active {
+    transform: scale(0.98);
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .dept-buttons button:hover {
+    animation: none; /* Stop float while hovering */
+    animation: bounce 0.4s; /* Trigger bounce */
+    background-color: #28a745;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  .dept-buttons button {
+    animation: float 3s ease-in-out infinite;
+    transition: background-color 0.3s ease;
+  }
+  
+  
+  /* 📱 Mobile: exactly 2 buttons per row on small screens */
+  @media (max-width: 600px) {
+    .dept-buttons {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+  }
+  
+  /* 📱 Extra small devices: fallback to 1 per row */
+  @media (max-width: 360px) {
+    .dept-buttons {
+      grid-template-columns: 1fr;
+    }
+  }
+  

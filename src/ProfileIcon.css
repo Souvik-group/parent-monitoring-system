@@ -1,0 +1,87 @@
+.profile-icon-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999; /* Ensures the profile icon is always on top */
+  }
+  
+  .circle {
+    width: 40px;
+    height: 40px;
+    background-color: #508f6b; /* Blue background for the profile icon */
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 50%; /* Makes the icon circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .circle:hover {
+    background-color: #1976d2; /* Darker blue on hover */
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); /* Subtle shadow for the dropdown */
+    padding: 15px;
+    border-radius: 8px;
+    text-align: left;
+    z-index: 1000; /* Ensures the dropdown is above other elements */
+    width: 250px; /* Set width for dropdown */
+  }
+  
+  .dropdown p {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #333; /* Dark text for better readability */
+  }
+  
+  .dropdown p strong {
+    color: #000; /* Bold text for labels */
+  }
+  
+  .dropdown button {
+    background-color: #ff4d4d; /* Red background for the logout button */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    margin-top: 10px;
+  }
+  
+  .dropdown button:hover {
+    background-color: #ff1a1a; /* Darker red on hover */
+  }
+  .dropdown-heading {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333; /* Dark text for better readability */
+    margin-bottom: 10px;
+    border-bottom: 2px solid #2196f3; /* Blue underline */
+    padding-bottom: 5px;
+  }
+
+  @media (max-width: 600px) {
+    .dropdown {
+      right: 10px; /* Avoid edge cutoff on small screens */
+      width: 90vw; /* Responsive width */
+      max-width: 300px; /* Limit the max width */
+    }
+  
+    .circle {
+      width: 36px;
+      height: 36px;
+      font-size: 18px;
+    }
+  }
+  

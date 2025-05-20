@@ -1,0 +1,142 @@
+.hero {
+  height: 560px; /* Sets the height of the hero section */
+  display: flex;
+  align-items: center;
+  text-align: left;
+  gap: 20px; /* Adds space between elements */
+  padding: 5%; /* Adds padding */
+  background-image: url('https://i.postimg.cc/FHkNMWw3/empty-classroom-with-chalkboard-and-wooden-desks-photo.jpg'); /* Replace with your image URL */
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-position: center; /* Centers the image */
+  background-attachment: fixed; /* Makes the background image fixed */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-color: #218838;
+  position: relative; /* For positioning child elements */
+}
+
+/* Adding an element for the width animation */
+.hero-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px; /* Set the height of the animated line */
+  background-color: #28a745; /* Green color */
+  width: 0%; /* Initially no width */
+  animation: animate 6s linear infinite; /* Apply the width animation */
+}
+
+/* Keyframes for the fade-in and slide-up effect */
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white; /* Sets the text color to white */
+  opacity: 0; /* Initially invisible */
+  transform: translateY(30px); /* Start position below */
+  animation: fadeInUp 1.5s ease-out forwards; /* Apply animation */
+}
+
+/* Keyframes for the fade-in and slide-up effect */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); /* Starts below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Ends at normal position */
+  }
+}
+
+.animated-text {
+  position: relative;
+  font-family: "Avenir Next LT Pro", sans-serif;
+  font-size: 70px;
+  font-weight: 100;
+  color: rgba(38, 20, 20, 0.28);
+  letter-spacing: 0.1em;
+}
+
+.animated-text:before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  color: rgba(252, 252, 252, 0.97);
+  text-shadow: 4px 4px 4px rgb(116, 29, 72);
+  -webkit-text-stroke: 0.12vw rgba(252, 252, 252, 0.97);
+  border-right: 1px solid rgb(255, 255, 255);
+  overflow: hidden;
+  animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+  0%, 10%, 100% {
+    width: 0%;
+  }
+  70%, 90% {
+    width: 100%;
+  }
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  color: white; /* Ensures the text is readable on the background */
+}
+
+.hero-btn {
+  padding: 15px 30px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.hero-btn:hover {
+  background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    height: 400px; /* Adjust height for smaller screens */
+    padding: 10%; /* Increase padding for smaller screens */
+  }
+
+  .hero-content h1 {
+    font-size: 2rem; /* Smaller font size for smaller screens */
+  }
+
+  .hero-content p {
+    font-size: 1.2rem; /* Smaller font size for smaller screens */
+  }
+
+  .hero-btn {
+    font-size: 0.9rem; /* Smaller button font size */
+    padding: 12px 25px; /* Adjust button size */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 300px; /* Further reduce height for very small screens */
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem; /* Even smaller font size */
+  }
+
+  .hero-content p {
+    font-size: 1rem; /* Even smaller font size */
+  }
+
+  .hero-btn {
+    font-size: 0.8rem; /* Smaller button font size */
+    padding: 10px 20px; /* Adjust button size */
+  }
+}

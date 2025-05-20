@@ -1,0 +1,418 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* App.css */
+
+.blur-background {
+  filter: blur(4px);
+  transition: filter 0.3s ease;
+}
+
+/* Popup modal */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(12px);
+  background: rgba(18, 117, 117, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  width: 420px;
+  max-width: 95%;
+  z-index: 1000;
+  animation: slideFade 0.5s ease forwards;
+}
+
+/* Popup animation */
+@keyframes slideFade {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -60%) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Popup header */
+.popup h2 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+/* Form labels and inputs */
+.popup label {
+  display: block;
+  margin-bottom: 16px;
+  color: #eee;
+  font-weight: 500;
+}
+
+.popup input {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 16px;
+  border: none;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  margin-top: 6px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.popup input:focus {
+  outline: none;
+  background: rgba(176, 139, 17, 0.25);
+  box-shadow: 0 0 8px rgba(43, 87, 104, 0.3);
+}
+
+/* OTP + Email layout */
+.email-otp-wrapper {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+/* Send OTP Button */
+.send-otp-btn {
+  background: linear-gradient(135deg, #28a380);
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(93, 169, 58, 0.2);
+}
+
+/* Hover effect */
+.popup button:hover,
+.send-otp-btn:hover {
+  background: linear-gradient(135deg, #92ad41);
+  box-shadow: 0 0 12px rgba(154, 182, 27, 0.5);
+}
+
+/* Disabled state for Send OTP */
+.send-otp-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #753b41;
+  box-shadow: none;
+}
+
+/* Submit button (Register/Login) */
+.popup button[type="submit"] {
+  background: linear-gradient(135deg, #448f88);
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.popup button[type="submit"]:hover {
+  background: linear-gradient(135deg, #0575e6, #00f260);
+  box-shadow: 0 0 12px rgba(0, 255, 128, 0.5);
+}
+
+.popup button:focus {
+  outline: 2px solid #00c6ff;
+  outline-offset: 2px;
+}
+
+/* Login/Register toggle */
+.login-toggle {
+  margin-top: 20px;
+  text-align: center;
+  color: #ddd;
+  font-size: 14px;
+}
+
+.login-toggle a,
+.login-toggle button {
+  color: #ffffff;
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
+}
+
+.login-toggle a:hover,
+.login-toggle button:hover {
+  text-decoration: underline;
+}
+
+/* Error text */
+.popup p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Error text */
+.error-text {
+  color: red;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+/* Password wrapper */
+.password-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Toggle password icon */
+.toggle-password-icon {
+  cursor: pointer;
+  font-size: 18px;
+  color: #007bff;
+}
+
+/* Email and OTP wrapper */
+.email-otp-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Responsive */
+@media screen and (max-width: 480px) {
+  .popup {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .popup h2 {
+    font-size: 22px;
+  }
+
+  .popup input {
+    font-size: 14px;
+  }
+}
+
+/* Responsive adjustments for mobile view */
+@media screen and (max-width: 768px) {
+  .popup {
+    width: 70%;
+    padding: 20px;
+  }
+
+  .popup h2 {
+    font-size: 20px;
+  }
+
+  .popup input {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .popup button[type="submit"] {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .popup label {
+    font-size: 14px;
+  }
+
+  .email-otp-wrapper {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .send-otp-btn {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .login-toggle {
+    font-size: 12px;
+  }
+
+  .login-toggle a,
+  .login-toggle button {
+    font-size: 12px;
+  }
+}
+
+/* Adjustments for live stream components */
+@media screen and (max-width: 768px) {
+  img {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+
+/* Success Modal */
+.success-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+
+.success-modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.success-modal-content h2 {
+  color: #4CAF50;
+  margin-bottom: 15px;
+}
+
+.success-modal-content p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Success modal button */
+.success-modal-content button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Forgot Password Link */
+.forgot-password-link {
+  color: #007bff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+.forgot-password-link:hover {
+  color: #0056b3;
+}
+
+/* Cancel Forgot Password Button */
+.cancel-forgot-password {
+  margin-top: 10px;
+  background: #000000;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cancel-forgot-password:hover {
+  background: #050505;
+}
+
+/* Forgot Password Submit Button */
+.forgot-password-submit {
+  background: linear-gradient(135deg, #448f88);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.forgot-password-submit:hover {
+  background: linear-gradient(135deg, #0575e6, #00f260);
+  box-shadow: 0 0 12px rgba(0, 255, 128, 0.5);
+}
+
+/* Verified button state */
+.send-otp-btn.verified {
+  background-color: #4caf50;
+  cursor: not-allowed;
+}
+
+/* Success modal button */
+.success-modal-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.success-modal-button:hover {
+  background-color: #45a049;
+}

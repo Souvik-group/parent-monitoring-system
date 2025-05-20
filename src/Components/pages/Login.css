@@ -1,0 +1,116 @@
+
+  .login-body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: color-mix(in hsl, hsl(198, 53%, 62%), salmon 85%);;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    animation: fadeIn 1s ease-in;
+    margin: 0;
+  }
+  
+  .login-container {
+    display: flex;
+    background-color: #e3e0d9;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+    transform: scale(0.95);
+    animation: popIn 0.6s ease-out forwards;
+  }
+  
+  .social-login {
+    margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .btn {
+    display: block;
+    width: 200px;
+    padding: 12px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .facebook {
+    background-color: #3b5998;
+  }
+  
+  .google {
+    background-color: #dd4b39;
+  }
+  
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .form-login input[type="email"],
+  .form-login input[type="password"] {
+    display: block;
+    width: 250px;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-login input:focus {
+    border-color: #2196F3;
+    outline: none;
+  }
+  
+  .form-login a {
+    color: #4a90e2;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+  }
+  
+  .form-login a:hover {
+    color: #0b5ed7;
+  }
+  
+  .reset-link {
+    float: right;
+    margin-top: 10px;
+  }
+  
+  .form-login label {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  .form-login input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .login-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #2196F3;
+    border: none;
+    color: white;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease;
+  }
+  
+  .login-btn:hover {
+    background-color: #0b7dda;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  

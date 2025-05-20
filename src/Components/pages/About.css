@@ -1,0 +1,91 @@
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 20px; /* Matches the padding of the services section */
+    background-color: #f9f9f9;
+    max-width: 2000px; /* Sets the same maximum width as services */
+    margin: 0 auto; /* Centers the section horizontally */
+    width: 90%; /* Full width */
+  }
+  
+  
+  .about-content {
+    flex: 1;
+    max-width: 50%;
+  }
+  
+  .about-content h1 {
+    font-size: 2.5rem;
+    color: black;
+  }
+  
+  .about-content p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .about-btn {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .about-btn:hover {
+    background-color: #218838;
+  }
+  
+  .about-image {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .about-image img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .about {
+      flex-direction: column;
+      padding: 60px 15px;
+      text-align: center;
+    }
+  
+    .about-content,
+    .about-image {
+      max-width: 100%;
+      flex: unset;
+    }
+  
+    .about-content h1 {
+      font-size: 2rem;
+    }
+  
+    .about-content p {
+      font-size: 1rem;
+    }
+  
+    .about-btn {
+      font-size: 0.95rem;
+      padding: 10px 16px;
+    }
+  
+    .about-image img {
+      max-width: 100%;
+      margin-top: 30px;
+    }
+  }
+  
