@@ -1,22 +1,36 @@
-import React from 'react';
-import { generateHolidays } from '../../data/holidays'; // Use named import
+import React, { useEffect, useState } from 'react';
+import { db1 } from '../../firebase2'; // Adjust the import path as necessary
+import { collection, getDocs } from 'firebase/firestore';
 import './HolidayBoard.css';
 
 const HolidayBoard = () => {
-  const holidays = generateHolidays(); // Dynamically generate holidays
+  const [notifications, setNotifications] = useState([]);
+
+  useEffect(() => {
+    const fetchNotifications = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db1, 'notifications'));
+        const data = querySnapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }));
+        setNotifications(data);
+      } catch (error) {
+        console.error('Error fetching notifications:', error);
+      }
+    };
+
+    fetchNotifications();
+  }, []);
 
   return (
     <div className="holiday-board">
-      <h2>Holiday Calendar</h2>
-      <div className="calendar-grid">
-        {holidays.map((holiday, index) => (
-          <div key={index} className="calendar-cell">
-            <div className="holiday-date">{holiday.date}</div>
-            <div className="holiday-name">{holiday.name}</div>
-            <div className="holiday-reason">{holiday.reason}</div>
-          </div>
+      <h2>Notifications</h2>
+      <ul>
+        {notifications.map(notif => (
+          <li key={notif.id}>{notif.text}</li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };
